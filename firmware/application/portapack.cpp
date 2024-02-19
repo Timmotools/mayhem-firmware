@@ -256,7 +256,8 @@ static audio::Codec* portapack_audio_codec() {
     /* I2C ready OK, Automatic recognition of audio chip */
     return (audio_codec_wm8731.detected())
                ? static_cast<audio::Codec*>(&audio_codec_wm8731)
-               : static_cast<audio::Codec*>(&audio_codec_ak4951);
+               //: static_cast<audio::Codec*>(&audio_codec_ak4951);
+               : static_cast<audio::Codec*>(&audio_codec_wm8731);
 }
 
 static const portapack::cpld::Config& portapack_cpld_config() {
